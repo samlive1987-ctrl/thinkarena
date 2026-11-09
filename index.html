@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090b14">
+<title>ThinkArena — Think Beyond. Debate Everything.</title>
+<style>
+:root{--bg:#090b14;--panel:#111522;--panel2:#171d2d;--line:#262d42;--muted:#929bb3;--text:#f4f6ff;--purple:#9b87ff;--blue:#67b7ff;--cyan:#5ce1d3;--gold:#f5c96a}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#1b1740 0,transparent 35%),radial-gradient(ellipse at 90% 20%,#102d42 0,transparent 30%),var(--bg);color:var(--text);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+button,textarea{font:inherit}button{cursor:pointer}.shell{max-width:1240px;margin:auto;padding:26px 24px 60px}.top{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff12;padding:6px 0 22px}.brand{display:flex;align-items:center;gap:12px;font-weight:850;letter-spacing:.12em}.logo{width:39px;height:39px;border-radius:13px;background:linear-gradient(135deg,#9b87ff,#53d9d2);display:grid;place-items:center;color:#080b16;font-size:21px;font-weight:900;box-shadow:0 0 28px #8d7bff55}.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:.22em;font-weight:600}.topright{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:12px}.status{border:1px solid #2e705f;background:#10251f;color:#7de5bd;padding:7px 11px;border-radius:30px}
+.hero{text-align:center;padding:48px 0 34px}.eyebrow{color:#a99aff;text-transform:uppercase;letter-spacing:.22em;font-size:11px;font-weight:800}.hero h1{font-size:clamp(36px,6vw,64px);line-height:1.04;letter-spacing:-.055em;margin:13px 0;background:linear-gradient(100deg,#fff 20%,#b8aaff 55%,#75e5dc);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:var(--muted);max-width:620px;margin:0 auto;font-size:16px}.layout{display:grid;grid-template-columns: minmax(0,1.55fr) minmax(260px,.75fr);gap:18px;align-items:start}.panel{background:linear-gradient(145deg,#151a2aee,#0f1320f5);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 18px 60px #0003}.panel h2{font-size:16px;margin:0 0 5px}.sub{color:var(--muted);font-size:12px}.label{display:block;color:#c7cde0;font-size:12px;font-weight:700;margin:20px 0 8px}.topic{width:100%;min-height:112px;resize:vertical;border:1px solid #303950;border-radius:13px;background:#090e1b;color:var(--text);padding:15px;outline:none}.topic:focus{border-color:var(--purple);box-shadow:0 0 0 3px #9b87ff20}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.chip{border:1px solid #303950;background:#151b2b;color:#bfc8df;border-radius:30px;padding:7px 11px;font-size:11px}.chip:hover{border-color:var(--purple);color:white}.settings{display:grid;grid-template-columns:1fr 1fr;gap:12px}.setting{border:1px solid #293148;border-radius:12px;padding:12px;background:#0d1220}.setting b{font-size:12px;display:block}.setting span{font-size:11px;color:var(--muted)}.primary{border:0;border-radius:12px;padding:13px 18px;background:linear-gradient(100deg,#927aff,#5c9dff);color:#080b16;font-weight:850;box-shadow:0 8px 25px #7e76ff30}.primary:disabled{opacity:.55;cursor:wait}.full{width:100%;margin-top:18px}.sidecard{margin-bottom:14px}.step{display:flex;gap:10px;margin:14px 0;color:#cbd2e5;font-size:12px}.num{width:23px;height:23px;border-radius:8px;background:#25213e;color:#b6a7ff;display:grid;place-items:center;font-weight:800;flex:none}.ai-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}.ai{background:#101626;border:1px solid var(--line);border-radius:15px;padding:14px;min-height:118px}.aihead{display:flex;align-items:center;gap:9px;font-weight:750;font-size:13px}.avatar{width:31px;height:31px;border-radius:10px;display:grid;place-items:center;font-weight:900}.chatgpt{background:#12352f;color:#7ce4c2}.gemini{background:#272044;color:#c0aaff}.grok{background:#30323a;color:#e8eaf1}.role{font-size:10px;color:var(--muted);margin-top:3px}.ai .state{font-size:10px;color:#7de5bd;margin-top:15px}.results{margin-top:18px;display:none}.results.show{display:block}.resulthead{display:flex;align-items:center;justify-content:space-between;margin-bottom:13px}.resultgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.answer{border:1px solid var(--line);border-radius:14px;padding:14px;background:#0c1220}.answer h3{font-size:13px;margin:0 0 8px}.answer p{color:#bdc6dc;font-size:12px;margin:0;white-space:pre-wrap}.judge{margin-top:13px;border:1px solid #685c36;background:linear-gradient(120deg,#211d16,#171729);border-radius:15px;padding:17px}.judge h3{margin:0 0 8px;color:var(--gold);font-size:14px}.judge p{color:#d7d1bf;font-size:12px;margin:0}.foot{text-align:center;color:#626d86;font-size:11px;margin-top:30px}.notice{font-size:11px;color:#d6b96d;margin-top:13px}.hidden{display:none}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.ai-grid,.resultgrid{grid-template-columns:1fr}.hero{padding:36px 0 25px}.shell{padding:18px 14px 40px}.panel{padding:18px}.topright .status{display:none}}
+@media(max-width:420px){.settings{grid-template-columns:1fr}.brand{font-size:13px}.topright{font-size:10px}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="top">
+  <div class="brand"><div class="logo">T</div><div>THINKARENA<small>THINK BEYOND. DEBATE EVERYTHING.</small></div></div>
+  <div class="topright"><span>Multi-AI decision lab</span><span class="status">● Prototype</span></div>
+</header>
+<section class="hero">
+  <div class="eyebrow">Three perspectives. One stronger decision.</div>
+  <h1>Enter the Arena.</h1>
+  <p>Put your toughest question to multiple AI minds. Let them challenge assumptions, compare arguments and help you reach a clearer decision.</p>
+</section>
+<main class="layout">
+  <section class="panel">
+    <h2>Start a debate</h2><div class="sub">Give the arena a question worth thinking about.</div>
+    <label class="label" for="topic">YOUR DEBATE TOPIC</label>
+    <textarea id="topic" class="topic" placeholder="Example: Is opening a healthy breakfast outlet in Mumbai a profitable business in 2027?"></textarea>
+    <div class="chips">
+      <button class="chip" data-topic="Will AI create more jobs than it replaces over the next 10 years?">Future of AI</button>
+      <button class="chip" data-topic="What is the best low-investment business to start in Mumbai?">Business idea</button>
+      <button class="chip" data-topic="Should cities prioritize public transport over private vehicles?">City planning</button>
+    </div>
+    <label class="label">DEBATE FORMAT</label>
+    <div class="settings">
+      <div class="setting"><b>3 AI participants</b><span>ChatGPT · Gemini · Grok</span></div>
+      <div class="setting"><b>2 debate rounds</b><span>Opening views + rebuttals</span></div>
+      <div class="setting"><b>AI Judge</b><span>Compare reasoning and evidence</span></div>
+      <div class="setting"><b>Output</b><span>Summary + practical verdict</span></div>
+    </div>
+    <button id="start" class="primary full">⚡ Start AI Debate</button>
+    <div class="notice">Demo mode: sample responses are used. Live AI API connections are not configured yet.</div>
+    <section id="results" class="results">
+      <div class="resulthead"><div><h2>Debate results</h2><div class="sub">A sample arena session</div></div><button id="reset" class="chip">New debate ↗</button></div>
+      <div class="resultgrid">
+        <article class="answer"><h3><span style="color:#7ce4c2">●</span> ChatGPT · Analyst</h3><p id="a1"></p></article>
+        <article class="answer"><h3><span style="color:#b6a7ff">●</span> Gemini · Challenger</h3><p id="a2"></p></article>
+        <article class="answer"><h3><span style="color:#e8eaf1">●</span> Grok · Critic</h3><p id="a3"></p></article>
+      </div>
+      <div class="judge"><h3>🏆 AI Judge — Preliminary verdict</h3><p id="verdict"></p></div>
+    </section>
+  </section>
+  <aside>
+    <section class="panel sidecard">
+      <h2>Meet the minds</h2><div class="sub">Independent perspectives, one arena.</div>
+      <div class="ai-grid" style="grid-template-columns:1fr">
+        <div class="ai"><div class="aihead"><div class="avatar chatgpt">C</div>ChatGPT</div><div class="role">Structured analyst · Builds the case</div><div class="state">● Ready to participate</div></div>
+        <div class="ai"><div class="aihead"><div class="avatar gemini">G</div>Gemini</div><div class="role">Challenger · Tests assumptions</div><div class="state">● Ready to participate</div></div>
+        <div class="ai"><div class="aihead"><div class="avatar grok">X</div>Grok</div><div class="role">Critical thinker · Looks for blind spots</div><div class="state">● Ready to participate</div></div>
+      </div>
+    </section>
+    <section class="panel">
+      <h2>How it works</h2>
+      <div class="step"><span class="num">1</span><span><b>Ask</b><br>Submit one clear question.</span></div>
+      <div class="step"><span class="num">2</span><span><b>Debate</b><br>Models respond and challenge each other.</span></div>
+      <div class="step"><span class="num">3</span><span><b>Decide</b><br>Judge summarizes strengths, risks and uncertainty.</span></div>
+    </section>
+  </aside>
+</main>
+<footer class="foot">THINKARENA · Prototype v0.1 · AI outputs can be incorrect; verify important claims independently.</footer>
+</div>
+<script>
+const topic=document.getElementById('topic');
+document.querySelectorAll('[data-topic]').forEach(b=>b.addEventListener('click',()=>topic.value=b.dataset.topic));
+const start=document.getElementById('start'), results=document.getElementById('results');
+start.addEventListener('click',()=>{
+ const q=topic.value.trim(); if(!q){topic.focus();topic.placeholder='Please enter a topic before starting your debate.';return}
+ start.disabled=true;start.textContent='⏳ Preparing the arena…';
+ setTimeout(()=>{
+  document.getElementById('a1').textContent=`Question: ${q}\n\nA useful starting point is to define the goal, constraints and success metrics. Separate what is already known from assumptions that need testing. Build the strongest case for the proposal, then validate it with real-world evidence before acting.`;
+  document.getElementById('a2').textContent=`Challenge: what evidence would change your mind about this question?\n\nThe main risk is treating a plausible idea as a proven outcome. Compare at least two alternatives, identify who benefits and who bears the cost, and test the weakest assumption with a small experiment.`;
+  document.getElementById('a3').textContent=`Critical view: beware of hidden costs, incentives and edge cases.\n\nA convincing answer should include downside scenarios, implementation friction and a measurable stop/go threshold. Do not confuse confident language with reliable evidence.`;
+  document.getElementById('verdict').textContent='No real AI models have been queried in this prototype. The sample demonstrates the intended format only. A production verdict will compare model responses, flag unsupported claims, disclose uncertainty and provide a practical next step.';
+  results.classList.add('show');start.disabled=false;start.textContent='⚡ Start AI Debate';results.scrollIntoView({behavior:'smooth',block:'start'});
+ },650);
+});
+document.getElementById('reset').addEventListener('click',()=>{results.classList.remove('show');topic.value='';topic.focus()});
+</script>
+</body></html>
